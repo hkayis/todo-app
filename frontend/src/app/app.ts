@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   yeniTitle: string = '';
   yeniDescription: string = '';
 
-  // EDIT için: hangi görev düzenleniyor (id) ve düzenlenen değerler
+  
   duzenlenenId: string | null = null;
   duzenTitle: string = '';
   duzenDescription: string = '';
@@ -72,16 +72,14 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // ---- EDIT METOTLARI ----
-
-  // Düzenleme moduna gir: mevcut değerleri düzen alanlarına kopyala
+ 
   duzenlemeBaslat(todo: Todo): void {
     this.duzenlenenId = todo.id;
     this.duzenTitle = todo.title;
     this.duzenDescription = todo.description || '';
   }
 
-  // Düzenlemeyi kaydet
+
   duzenlemeKaydet(todo: Todo): void {
     if (!this.duzenTitle.trim()) {
       return;
@@ -90,16 +88,16 @@ export class AppComponent implements OnInit {
     const guncel = {
       title: this.duzenTitle,
       description: this.duzenDescription,
-      isCompleted: todo.isCompleted   // tamamlanma durumu aynı kalsın
+      isCompleted: todo.isCompleted   
     };
 
     this.todoService.updateTodo(todo.id, guncel).subscribe(() => {
-      this.duzenlenenId = null;   // düzenleme modundan çık
+      this.duzenlenenId = null;   
       this.todolariYukle();
     });
   }
 
-  // Düzenlemeden vazgeç
+  
   duzenlemeIptal(): void {
     this.duzenlenenId = null;
   }
