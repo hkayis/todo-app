@@ -226,6 +226,6 @@ Bu yapı sayesinde her katman bağımsız olarak test edilebilir ve değiştiril
 
 ## Geliştirici
 
-**Hakan Kayiş**
+**Hakan Kayiş** -
 İhsan Doğramacı Bilkent Üniversitesi - Bilişim Sistemleri ve Teknolojileri
 https://www.linkedin.com/in/hakan-kayi%C5%9F-a1b772351/
