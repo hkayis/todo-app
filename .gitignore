@@ -1,0 +1,14 @@
+# ---- .NET (backend) ----
+backend/bin/
+backend/obj/
+backend/.vs/
+*.user
+
+# ---- Angular (frontend) ----
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# ---- Genel ----
+*.log
+.DS_Store
