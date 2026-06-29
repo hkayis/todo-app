@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Yapılacaklar Listesi</h1>
 
-  <!-- YENİ GÖREV EKLEME FORMU -->
+  
   <div class="form-alani">
     <input
       type="text"
@@ -14,12 +14,12 @@
     <button (click)="todoEkle()">Ekle</button>
   </div>
 
-  <!-- GÖREV LİSTESİ -->
+  
   <ul class="todo-listesi">
     @for (todo of todos; track todo.id) {
       <li [class.tamamlandi]="todo.isCompleted">
 
-        <!-- DÜZENLEME MODU: bu görev düzenleniyorsa -->
+      
         @if (duzenlenenId === todo.id) {
           <div class="duzen-alani">
             <input type="text" [(ngModel)]="duzenTitle" placeholder="Başlık" />
@@ -29,7 +29,7 @@
           </div>
         }
 
-        <!-- NORMAL MOD: bu görev düzenlenmiyorsa -->
+        
         @else {
           <div class="todo-bilgi">
             <input
