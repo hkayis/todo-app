@@ -36,7 +36,7 @@ namespace TodoApi.Application.Controllers
             return Ok(sonuc);
 
         }
-        //kullanılmıyor
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
