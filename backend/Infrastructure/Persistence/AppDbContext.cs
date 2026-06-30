@@ -11,5 +11,6 @@ namespace TodoApi.Infrastructure.Persistence
         }
 
         public DbSet<ToDo> ToDos { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }   

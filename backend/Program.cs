@@ -15,12 +15,18 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<GetAllToDosHandler>();
 builder.Services.AddScoped<GetToDoByIdHandler>();
 builder.Services.AddScoped<CreateToDoHandler>();
 builder.Services.AddScoped<UpdateToDoHandler>();
 builder.Services.AddScoped<DeleteToDoHandler>();
+
+builder.Services.AddScoped<TodoApi.Application.Interfaces.ITokenService,
+                           TodoApi.Infrastructure.Services.TokenService>();
+builder.Services.AddScoped<TodoApi.Application.CommandHandlers.RegisterHandler>();
+builder.Services.AddScoped<TodoApi.Application.CommandHandlers.LoginHandler>();
 
 builder.Services.AddCors(options =>
 {
