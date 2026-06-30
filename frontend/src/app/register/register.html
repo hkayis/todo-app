@@ -1,0 +1,29 @@
+<div class="auth-container">
+  <h2>Kayıt Ol</h2>
+
+  <div class="auth-form">
+    <input
+      type="text"
+      placeholder="Kullanıcı adı"
+      [(ngModel)]="username" />
+
+    <input
+      type="password"
+      placeholder="Şifre (en az 6 karakter)"
+      [(ngModel)]="password" />
+
+    <button (click)="kayitOl()">Kayıt Ol</button>
+
+    @if (hataMesaji) {
+      <p class="hata">{{ hataMesaji }}</p>
+    }
+
+    @if (basariMesaji) {
+      <p class="basari">{{ basariMesaji }}</p>
+    }
+
+    <p class="link">
+      Zaten hesabın var mı? <a routerLink="/login">Giriş yap</a>
+    </p>
+  </div>
+</div>

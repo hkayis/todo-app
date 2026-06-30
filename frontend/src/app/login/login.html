@@ -1,0 +1,25 @@
+<div class="auth-container">
+  <h2>Giriş Yap</h2>
+
+  <div class="auth-form">
+    <input
+      type="text"
+      placeholder="Kullanıcı adı"
+      [(ngModel)]="username" />
+
+    <input
+      type="password"
+      placeholder="Şifre"
+      [(ngModel)]="password" />
+
+    <button (click)="girisYap()">Giriş Yap</button>
+
+    @if (hataMesaji) {
+      <p class="hata">{{ hataMesaji }}</p>
+    }
+
+    <p class="link">
+      Hesabın yok mu? <a routerLink="/register">Kayıt ol</a>
+    </p>
+  </div>
+</div>
