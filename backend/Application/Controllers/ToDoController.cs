@@ -57,7 +57,7 @@ namespace TodoApi.Application.Controllers
             };
 
             var sonuc = await _createHandler.Handle(command);
-            return Ok(sonuc);
+            return CreatedAtAction(nameof(GetById), new { id = sonuc.Id }, sonuc);
         }
        
         [HttpPut("{id}")]
