@@ -31,7 +31,7 @@ export class RegisterComponent {
         }, 1500);
       },
       error: (err) => {
-        this.hataMesaji = err.error || 'Kayıt başarısız';
+        this.hataMesaji = err.error?.message || 'Kayıt başarısız şifre en az 6 karakter olmalıdır';   // ← düzeltildi
       }
     });
   }
