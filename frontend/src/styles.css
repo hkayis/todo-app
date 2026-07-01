@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+/* Tüm sayfalarda geçerli koyu tema temeli */
+body {
+  margin: 0;
+  background-color: #0f172a;   /* koyu lacivert arka plan */
+  color: #e2e8f0;              /* açık gri metin */
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}

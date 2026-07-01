@@ -8,9 +8,7 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'todos', component: TodosComponent },
 
-  // Boş yol (ana sayfa) → login'e yönlendir
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
-  // Tanımsız yol → login'e yönlendir
   { path: '**', redirectTo: '/login' }
 ];

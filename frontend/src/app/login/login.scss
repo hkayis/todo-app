@@ -1,58 +1,89 @@
 .auth-container {
   max-width: 400px;
-  margin: 80px auto;
-  font-family: Arial, sans-serif;
+  margin: 100px auto;
+  padding: 0 20px;
 
   h2 {
     text-align: center;
-    color: #333;
+    color: #f1f5f9;
+    font-size: 28px;
+    margin-bottom: 8px;
   }
 }
 
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 24px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  gap: 16px;
+  padding: 32px;
+  background: #1e293b;                    /* kart arka planı (biraz daha açık lacivert) */
+  border: 1px solid #334155;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);   /* derinlik için gölge */
 
   input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 14px 16px;
+    background: #0f172a;                  /* input koyu */
+    border: 1px solid #334155;
+    border-radius: 10px;
+    color: #e2e8f0;
+    font-size: 15px;
+    transition: border-color 0.2s;        /* yumuşak geçiş */
+
+    &:focus {
+      outline: none;
+      border-color: #3b82f6;              /* tıklanınca mavi kenar */
+    }
+
+    &::placeholder {
+      color: #64748b;
+    }
   }
 
   button {
-    padding: 10px;
-    background: #4caf50;
+    padding: 14px;
+    background: #3b82f6;                   /* mavi buton */
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    font-size: 14px;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #2563eb;                 /* üzerine gelince koyu mavi */
+    }
   }
 
   .hata {
-    color: #f44336;
+    color: #f87171;                        /* yumuşak kırmızı */
     text-align: center;
     margin: 0;
+    font-size: 14px;
   }
 
   .basari {
-    color: #4caf50;
+    color: #4ade80;                        /* yumuşak yeşil */
     text-align: center;
     margin: 0;
+    font-size: 14px;
   }
 
   .link {
     text-align: center;
     font-size: 14px;
+    color: #94a3b8;
+    margin: 4px 0 0;
 
     a {
-      color: #2196f3;
+      color: #60a5fa;                      /* açık mavi link */
+      text-decoration: none;
       cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

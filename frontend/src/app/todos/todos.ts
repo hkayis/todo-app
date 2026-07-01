@@ -91,7 +91,6 @@ export class TodosComponent implements OnInit {
     this.duzenlenenId = null;
   }
 
-  // YENİ: çıkış yap
   cikisYap(): void {
     this.authService.logout();
     this.router.navigate(['/login']);

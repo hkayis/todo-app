@@ -25,14 +25,12 @@ export class RegisterComponent {
 
     this.authService.register(this.username, this.password).subscribe({
       next: () => {
-        // Kayıt başarılı → mesaj göster, login'e yönlendir
         this.basariMesaji = 'Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz...';
         setTimeout(() => {
           this.router.navigate(['/login']);
         }, 1500);
       },
       error: (err) => {
-        // Backend'den gelen hata mesajını göster
         this.hataMesaji = err.error || 'Kayıt başarısız';
       }
     });

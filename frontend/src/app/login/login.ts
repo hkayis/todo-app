@@ -16,7 +16,6 @@ export class LoginComponent {
   password: string = '';
   hataMesaji: string = '';
 
-  // AuthService ve Router'ı enjekte ediyoruz
   constructor(private authService: AuthService, private router: Router) { }
 
   girisYap(): void {
@@ -24,11 +23,9 @@ export class LoginComponent {
 
     this.authService.login(this.username, this.password).subscribe({
       next: () => {
-        // Başarılı: token saklandı (service'te), todo sayfasına git
         this.router.navigate(['/todos']);
       },
       error: () => {
-        // Başarısız: hata mesajı göster
         this.hataMesaji = 'Kullanıcı adı veya şifre hatalı';
       }
     });
