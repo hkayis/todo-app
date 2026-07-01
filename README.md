@@ -311,12 +311,12 @@ Authorization: Bearer <token>
 Proje, sorumlulukların ayrılması (separation of concerns) prensibine uygun olarak Clean Architecture yaklaşımıyla katmanlı bir şekilde tasarlanmıştır:
 
 - **Domain** katmanı, uygulamanın temel entity'lerini (ToDo, User) içerir ve hiçbir dış bağımlılığı yoktur.
-- **Application** katmanı, iş mantığını CQRS deseniyle yönetir. Command'ler (veri değiştiren işlemler) ve query'ler (veri okuyan işlemler) ayrı handler'larda ele alınır. Repository ve servis arayüzleri (interface) bu katmanda tanımlanır.
-- **Infrastructure** katmanı, veritabanı erişimini Repository Pattern ile, JWT üretimini ise TokenService ile sağlar. Bu katman, Application katmanında tanımlanan arayüzleri uygular.
+- **Application** katmanı, iş mantığını CQRS deseniyle yönetir. Commandler (veri değiştiren işlemler) ve queryler (veri okuyan işlemler) ayrı handlerlarda ele alınır. Repository ve serviceler için gereken interfaceler bu katmanda tanımlanır.
+- **Infrastructure** katmanı, veritabanı erişimini Repository Pattern ile, JWT üretimini ise TokenService ile sağlar. Bu katman, Application katmanında tanımlanan interfaceleri uygular.
 
 Bağımlılıklar dıştan içe doğru akacak şekilde tasarlanmıştır; yani Application katmanı Infrastructure'a değil, kendi tanımladığı arayüzlere bağımlıdır. Bu yapı sayesinde her katman bağımsız olarak test edilebilir ve değiştirilebilir. Örnek olarak veritabanı teknolojisi değiştirilse bile iş mantığı katmanı etkilenmez.
 
-Frontend tarafında da benzer bir sorumluluk ayrımı vardır: component'ler görünümü yönetirken, service'ler API iletişimini üstlenir. Kimlik doğrulama için route guard (giriş yapmamış kullanıcının korumalı sayfalara erişimini engeller) ve HTTP interceptor (her isteğe token'ı otomatik ekler) mekanizmaları kullanılmıştır.
+Frontend tarafında da benzer bir sorumluluk ayrımı vardır: component'ler görünümü yönetirken, service'ler API ile iletişimi üstlenir. Kimlik doğrulama için route guard ve HTTP interceptor mekanizmaları kullanılmıştır.
 
 ---
 
