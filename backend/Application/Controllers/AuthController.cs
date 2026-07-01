@@ -17,7 +17,6 @@ namespace TodoApi.Application.Controllers
             _loginHandler = loginHandler;
         }
 
-        // POST /api/auth/register
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto dto)
         {
@@ -30,12 +29,11 @@ namespace TodoApi.Application.Controllers
             var basarili = await _registerHandler.Handle(command);
 
             if (!basarili)
-                return BadRequest("Bu kullanıcı adı zaten alınmış");
+                return BadRequest(new { message = "Bu kullanıcı adı zaten alınmış" });
 
-            return Ok("Kayıt başarılı");
+            return Ok(new { message = "Kayıt başarılı" });
         }
 
-        // POST /api/auth/login
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
@@ -50,7 +48,7 @@ namespace TodoApi.Application.Controllers
             if (sonuc == null)
                 return Unauthorized("Kullanıcı adı veya şifre hatalı");
 
-            return Ok(sonuc);   // token + username döner
+            return Ok(sonuc);   
         }
     }
 }
