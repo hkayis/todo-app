@@ -2,12 +2,12 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using TodoApi.Application.Interfaces;   // Application'daki interface'i uyguluyor
+using TodoApi.Application.Interfaces;   
 using TodoApi.Domain.Entities;
 
 namespace TodoApi.Infrastructure.Services
 {
-	public class TokenService : ITokenService   // ← interface'i implement et
+	public class TokenService : ITokenService   
 	{
 		private readonly IConfiguration _config;
 
@@ -18,7 +18,7 @@ namespace TodoApi.Infrastructure.Services
 
 		public string CreateToken(User user)
 		{
-			// ... içerik aynı, değişmiyor ...
+			
 			var key = _config["Jwt:Key"]!;
 			var issuer = _config["Jwt:Issuer"];
 			var audience = _config["Jwt:Audience"];

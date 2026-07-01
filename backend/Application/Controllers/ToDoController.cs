@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using TodoApi.Application.CommandHandlers;
 using TodoApi.Application.DTOs;
 using TodoApi.Application.QueryHandlers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TodoApi.Application.Controllers
 {
     [ApiController]
-    [Route("api/todo")]   
+    [Route("api/todo")]
+    [Authorize]
     public class ToDoController : ControllerBase
     {
         private readonly GetAllToDosHandler _getAllHandler;

@@ -7,7 +7,6 @@ namespace TodoApi.Application.CommandHandlers
     {
         private readonly IUserRepository _userRepository;
 
-        // Artık DbContext değil, IUserRepository enjekte ediliyor
         public RegisterHandler(IUserRepository userRepository)
         {
             _userRepository = userRepository;
@@ -15,7 +14,6 @@ namespace TodoApi.Application.CommandHandlers
 
         public async Task<bool> Handle(RegisterCommand command)
         {
-            // Repository üzerinden kontrol
             var varMi = await _userRepository.ExistsByUsernameAsync(command.Username);
 
             if (varMi)
@@ -31,7 +29,6 @@ namespace TodoApi.Application.CommandHandlers
                 CreatedAt = DateTime.Now
             };
 
-            // Repository üzerinden ekle
             await _userRepository.AddAsync(user);
             return true;
         }
