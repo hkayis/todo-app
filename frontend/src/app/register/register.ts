@@ -16,6 +16,7 @@ export class RegisterComponent {
   password: string = '';
   hataMesaji: string = '';
   basariMesaji: string = '';
+  sifreGoster: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 

@@ -29,6 +29,7 @@
     color: #e2e8f0;
     font-size: 15px;
     transition: border-color 0.2s;        /* yumuşak geçiş */
+    width: 100%;
 
     &:focus {
       outline: none;
@@ -37,6 +38,31 @@
 
     &::placeholder {
       color: #64748b;
+    }
+  }
+
+  .password-field {
+    position: relative;
+    display: flex;
+
+    input {
+      padding-right: 44px;
+    }
+
+    .toggle-sifre {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      color: #64748b;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: #94a3b8;
+      }
     }
   }
 

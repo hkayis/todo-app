@@ -15,6 +15,7 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   hataMesaji: string = '';
+  sifreGoster: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 
